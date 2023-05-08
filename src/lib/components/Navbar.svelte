@@ -1,9 +1,5 @@
 <script lang="ts">
-	const links = [
-		{ id: 0, text: 'Login', href: '/login' },
-		{ id: 2, text: 'About', href: '/about' },
-		{ id: 3, text: 'Profile', href: '/profile' }
-	];
+export let links: {href: string, text: string}[]
 </script>
 
 <nav class="bg-blue-600 text-white py-4">
