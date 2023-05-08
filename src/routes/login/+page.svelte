@@ -6,7 +6,7 @@
 	export let data;
 	const { form: f, errors, constraints, enhance } = superForm(data.form);
 
-	export let form
+	export let form;
 </script>
 
 <svelte:head>

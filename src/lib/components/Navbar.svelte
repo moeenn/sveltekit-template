@@ -1,5 +1,5 @@
 <script lang="ts">
-export let links: {href: string, text: string}[]
+	export let links: { href: string; text: string }[];
 </script>
 
 <nav class="bg-blue-600 text-white py-4">
