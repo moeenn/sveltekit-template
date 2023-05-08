@@ -24,11 +24,11 @@ export const actions: Actions = {
     const form = await superValidate(request, loginSchema)
 
     if (!form.valid) {
-      return fail(422, { form })
+      return fail(422, { form, error: "Invalid form submission" })
     }
 
     if (form.data.email !== "admin@site.com") {
-      return fail(401, { form })
+      return fail(401, { form, error: "Invalid email or password" })
     }
     
     cookies.set("user.token", "abc123123123")

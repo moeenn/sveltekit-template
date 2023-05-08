@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { superForm } from 'sveltekit-superforms/client';
 	import InputError from '$lib/components/InputError.svelte';
+	import ErrorMessage from '$lib/components/ErrorMessage.svelte';
 
 	export let data;
-	const { form, errors, constraints, enhance } = superForm(data.form);
+	const { form: f, errors, constraints, enhance } = superForm(data.form);
+
+	export let form
 </script>
 
 <svelte:head>
@@ -16,6 +19,8 @@
 			<h1 class="text-2xl mb-4 font-serif">Login</h1>
 		</div>
 
+		<ErrorMessage message={form?.error} />
+
 		<form class="flex flex-col space-y-8" method="POST" use:enhance>
 			<div class="space-y-5">
 				<fieldset class="flex flex-col space-y-2">
@@ -24,7 +29,7 @@
 						class="bg-gray-100 text-sm px-3 py-2 rounded"
 						type="email"
 						name="email"
-						bind:value={$form.email}
+						bind:value={$f.email}
 						{...$constraints.email}
 					/>
 					<InputError message={$errors.email} />
@@ -36,7 +41,7 @@
 						class="bg-gray-100 text-sm px-3 py-2 rounded"
 						name="password"
 						type="password"
-						bind:value={$form.password}
+						bind:value={$f.password}
 						{...$constraints.password}
 					/>
 					<InputError message={$errors.password} />
