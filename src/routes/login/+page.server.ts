@@ -10,7 +10,6 @@ const loginSchema = z.object({
 
 export const load: PageServerLoad = async ({ cookies }) => {
   const token = cookies.get("user.token") 
-
   if (token) {
     throw redirect(307, "/")
   }
@@ -22,7 +21,6 @@ export const load: PageServerLoad = async ({ cookies }) => {
 export const actions: Actions = {
   default: async ({ request, cookies }) => {
     const form = await superValidate(request, loginSchema)
-
     if (!form.valid) {
       return fail(422, { form, error: "Invalid form submission" })
     }
