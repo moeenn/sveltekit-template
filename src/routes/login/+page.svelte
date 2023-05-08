@@ -6,6 +6,10 @@
 	const handleSubmit = (form: Form) => console.log(form);
 </script>
 
+<svelte:head>
+  <title>Login</title>
+</svelte:head>
+
 <div>
 	<div class="py-4 rounded">
 		<div class="flex justify-between">

@@ -2,6 +2,10 @@
 import Counter from "$lib/components/Counter.svelte"
 </script>
 
+<svelte:head>
+  <title>Home</title>
+</svelte:head>
+
 <div class="py-10">
   <h1 class="text-2xl mb-2 font-serif">Hello world</h1>
   <p class="text-sm leading-relaxed">
